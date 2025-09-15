@@ -7,9 +7,94 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build output
+dist/
+dist-ssr/
+build/
+.next/
+out/
+.nuxt/
+.vercel/
+.turbo/
+
+# Vite
+.vite/
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variables
+.env
+.env.*
+!.env.example
+
+# Mac system files
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
 node_modules
 dist
 dist-ssr
+.history
+.sw?
+.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.code-workspace
+.vs/
+.vscode-test/
+
+# JetBrains IDEs
+.idea/
+*.iml
+out/
+
+# Coverage
+coverage/
+*.lcov
+
+# Misc
+*.local
+.cache/
+.parcel-cache/
+.yarn/
+.pnp.*
+.cypress/
+.nyc_output/
+.sass-cache/
+.tmp/
+tmp/
+.log/
+logs/
+
+# OS generated files
+ehthumbs.db
+Icon?
+Thumbs.db
+
 *.local
 
 # Editor directories and files

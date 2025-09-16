@@ -7,7 +7,7 @@ const App: React.FC = () => {
     <Router>
       <nav className="p-4 border-b border-gray-200 mb-6 flex justify-between bg-white shadow-sm">
         <Link to="/" className="mr-4 text-blue-600 hover:text-blue-800 font-medium">
-          Customer
+          Customers
         </Link>
         <Link to="/restaurantOwner" className="text-blue-600 hover:text-blue-800 font-medium">
           Restaurant Owner

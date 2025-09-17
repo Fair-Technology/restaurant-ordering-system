@@ -26,7 +26,7 @@ export interface CreateRestaurantResponse {
 export const superAdminApi = createApi({
   reducerPath: 'superAdminApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_SUPERADMIN_API_URL,
+    baseUrl: import.meta.env.VITE_API_BASE_URL+'/superadmin',
     prepareHeaders: (headers) => {
       headers.set('Content-Type', 'application/json');
       return headers;

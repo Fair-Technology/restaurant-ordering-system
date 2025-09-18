@@ -11,6 +11,9 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+     "@azure/msal-browser": "^4.22.1",
+    "@azure/msal-node": "^3.7.3",
+    "@azure/msal-react": "^3.0.19",
     "@reduxjs/toolkit": "^2.9.0",
     "axios": "^1.12.2",
     "react": "^19.1.1",

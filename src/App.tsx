@@ -1,33 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import SuperAdmin from './SuperAdmin';
+import SuperAdmin from './pages/superAdmin/login';
+import ShopOwner from './pages/shopOwner/shopOwner';
+import SuperAdminDashboard from './pages/superAdmin/dashboard';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <nav className="p-4 border-b border-gray-200 mb-6 flex justify-between bg-white shadow-sm">
-        <Link to="/" className="mr-4 text-blue-600 hover:text-blue-800 font-medium">
-          Customers
-        </Link>
-        <Link to="/restaurantOwner" className="text-blue-600 hover:text-blue-800 font-medium">
-          Restaurant Owner
-        </Link>
-        <Link to="/superAdmin" className="text-blue-600 hover:text-blue-800 font-medium">
-          Super Admin
-        </Link>
+     <Router>
+      <nav style={{ padding: 16, borderBottom: '1px solid #eee', marginBottom: 24 }}>
+        <Link to="/" style={{ marginRight: 16 }}>Customer</Link>
+        {/* Removed links for Restaurant Owner and Super Admin */}
       </nav>
       <Routes>
-        <Route path="/" element={
-          <div className="flex items-center justify-center min-h-screen bg-gray-50">
-            <h1 className="text-4xl font-bold text-gray-800">Customer View</h1>
-          </div>
-        } />
-        <Route path="/restaurantOwner" element={
-          <div className="flex items-center justify-center min-h-screen bg-gray-50">
-            <h1 className="text-4xl font-bold text-gray-800">Restaurant Admin</h1>
-          </div>
-        } />
-        <Route path="/superAdmin" element={<SuperAdmin />} />
+        <Route path="/" element={<div><h1>Customer View</h1></div>} />
+        <Route path="/shop-owner" element={<ShopOwner />} />
+        <Route path="/superadmin" element={<SuperAdmin />} />
+         <Route path="/superAdminDashboard" element={<SuperAdminDashboard />} />
       </Routes>
     </Router>
   );

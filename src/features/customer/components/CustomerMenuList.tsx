@@ -30,6 +30,7 @@ const CustomerMenuList: React.FC<CustomerMenuListProps> = ({
               <div
                 key={item.id}
                 className="border border-accent-200 bg-white shadow-sm p-4 rounded-lg hover:shadow-md transition"
+                onClick={() => onAddToCart(item)}
               >
                 <ItemCard
                   name={item.name}

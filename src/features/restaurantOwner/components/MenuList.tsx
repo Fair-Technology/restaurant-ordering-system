@@ -1,13 +1,13 @@
-import { Item } from "../types";
+import { Item } from '../types';
 
 interface MenuListProps {
   items: Item[];
 }
 
 const sizeLabelMap: Record<string, string> = {
-  sm: "Small",
-  md: "Medium",
-  lg: "Large",
+  sm: 'Small',
+  md: 'Medium',
+  lg: 'Large',
 };
 
 const MenuList: React.FC<MenuListProps> = ({ items }) => {
@@ -67,7 +67,7 @@ const MenuList: React.FC<MenuListProps> = ({ items }) => {
                   {/* Sizes */}
                   <td className="px-4 py-2 text-gray-700">
                     {Array.isArray(item.size)
-                      ? item.size.map((s) => sizeLabelMap[s] || s).join(", ")
+                      ? item.size.map((s) => sizeLabelMap[s] || s).join(', ')
                       : sizeLabelMap[item.size] || item.size}
                   </td>
 
@@ -76,11 +76,11 @@ const MenuList: React.FC<MenuListProps> = ({ items }) => {
                     <span
                       className={`px-2 py-1 rounded-full text-xs font-medium ${
                         item.isAvailable
-                          ? "bg-green-100 text-green-700"
-                          : "bg-red-100 text-red-700"
+                          ? 'bg-green-100 text-green-700'
+                          : 'bg-red-100 text-red-700'
                       }`}
                     >
-                      {item.isAvailable ? "Available" : "Not Available"}
+                      {item.isAvailable ? 'Available' : 'Not Available'}
                     </span>
                   </td>
                 </tr>

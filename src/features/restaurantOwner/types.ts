@@ -8,4 +8,6 @@ export interface Item {
   isAvailable: boolean;
   createdAt?: string;
   updatedAt?: string;
+  category: 'mains' | 'snacks' | 'sides' | 'drinks' | 'desserts'; // ✅ new field
+  imageUrl?: string;
 }

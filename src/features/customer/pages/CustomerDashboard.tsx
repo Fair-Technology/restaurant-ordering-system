@@ -1,29 +1,22 @@
-import { useGetAvailableItemsByShopQuery } from "../../../store/api/itemApi";
-import CustomerMenuList from "../components/CustomerMenuList";
+import CustomerMenuList from '../components/CustomerMenuList';
+import { Item } from '../../restaurantOwner/types';
+import { dummyItems } from '../data/dummyMenuData';
+import { groupItemsByCategory } from '../../../utils/groupItemsByCategory';
 
 const CustomerDashboard: React.FC = () => {
-  const {
-    data: items = [],
-    isLoading,
-    isError,
-  } = useGetAvailableItemsByShopQuery("Shop_1"); // Shop ID should b passed dynamically later
-
-  const handleAddToCart = (item: any) => {
-    console.log("Adding to cart:", item);
-    // Later: dispatch to Redux cart slice
+  const handleAddToCart = (item: Item) => {
+    console.log('Added to cart:', item);
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  // Group items by category
+  const groupedItems = groupItemsByCategory(dummyItems);
 
-  if (isError) {
-    return <div>Failed to Load Menu.</div>;
-  }
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Customer Dashboard</h1>
-      <CustomerMenuList items={items} onAddToCart={handleAddToCart} />
+    <div>
+      <CustomerMenuList
+        groupedItems={groupedItems}
+        onAddToCart={handleAddToCart}
+      />
     </div>
   );
 };

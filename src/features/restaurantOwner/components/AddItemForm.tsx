@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Item } from "../types";
+import React, { useState } from 'react';
+import { Item } from '../types';
 
 interface AddItemFormProps {
   onCancel: () => void;
@@ -7,10 +7,10 @@ interface AddItemFormProps {
 }
 
 const AddItemForm: React.FC<AddItemFormProps> = ({ onCancel, onSubmit }) => {
-  const [name, setName] = React.useState("");
-  const [description, setDescription] = React.useState("");
-  const [price, setPrice] = useState<number | "">("");
-  const [size, setSize] = React.useState("");
+  const [name, setName] = React.useState('');
+  const [description, setDescription] = React.useState('');
+  const [price, setPrice] = useState<number | ''>('');
+  const [size, setSize] = React.useState('');
   const [isAvailable, setIsAvailable] = React.useState(true);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -18,13 +18,14 @@ const AddItemForm: React.FC<AddItemFormProps> = ({ onCancel, onSubmit }) => {
 
     const newItem: Item = {
       id: crypto.randomUUID(),
-      shopId: "Shop_1", // This should be set appropriately later on by retrieving the actual shop ID
+      shopId: 'Shop_1', // This should be set appropriately later on by retrieving the actual shop ID
       name,
       description,
-      price: typeof price === "string" ? 0 : price,
+      price: typeof price === 'string' ? 0 : price,
       size,
       isAvailable,
       createdAt: new Date().toISOString(),
+      category: 'mains',
     };
 
     console.log(newItem);
@@ -33,7 +34,7 @@ const AddItemForm: React.FC<AddItemFormProps> = ({ onCancel, onSubmit }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-6 rounded-md w-full max-w-md">
         <h2 className="text-xl font-bold mb-4">Add New Item</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
